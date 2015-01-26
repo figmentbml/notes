@@ -1,0 +1,12 @@
+<section>
+  {{textarea placeholder="Add a title!" value=titleCopy}}
+  {{textarea placeholder="Add a note!" value=noteCopy}}
+  <button {{action 'newNote'}}>Save Note</button>
+</section>
+
+<section>
+  {{#each note in model}}
+  {{note.title}}
+  {{note.body}}
+  {{/each}}
+</section>
