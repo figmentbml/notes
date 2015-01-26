@@ -3,21 +3,68 @@
 }
 
 html, body {
-  margin: 20px;
+  text: rgba(25,25,37, 1);
+  background-color: rgba(33,54,75, 1);
+  width: 100%;
+  font-family: 'Indie Flower', cursive;
+;}
+
+nav {
+  background: white;
+  padding:10px;
 }
 
 .newNote {
-  border: 1px solid black;
+  clear: both;
+  overflow: hidden;
+  background-color: rgba(185,178,134, 1);
+  padding: 20px;
+  margin: 20px;
+}
+
+.inputNote, .previewNote {
+  width: 49%;
+  float: left;
+}
+
+.previewNote {
+  margin-left: 10px;
+  text-align: center;
+}
+
+.inputNote textarea {
+  width: 100%;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.inputNote button {
+  margin: auto 42%;
 }
 
 .notes {
   width: 100%;
+  margin: 0 auto;
 }
 
 .note {
-  border: 1px solid black;
+  border: 3px solid rgba(83,117,103, 1);
+  border-radius: 40%;
   width: 30%;
-  float: left;
-  padding: 10px;
   margin: 5px;
+  text-align: center;
+  color: white;
+  padding: 15px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+button {
+  color: rgba(159,21,55, 1)
+}
+
+.welcome {
+  color: white;
+  text-align: center;
+  padding: 40px;
 }

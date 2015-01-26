@@ -1,11 +1,20 @@
 <section class="newNote">
-  <header>
-    {{textarea placeholder="Add a title!" value=titleCopy rows=1}}
-  </header>
-  <body>
-    {{textarea placeholder="Add a note!" value=noteCopy}}
-    <button {{action 'newNote'}}>Save Note</button>
-  </body>
+  <div class="inputNote">
+    <header>
+      <h2>Create a note!</h2>
+      {{textarea placeholder="Add a title!" value=titleCopy rows=1}}
+    </header>
+    <body>
+      {{textarea placeholder="Add a note!" value=noteCopy}}
+      <button {{action 'newNote'}}>Save Note</button>
+    </body>
+  </div>
+  <div class="previewNote">
+    <h2>{{titleCopy}}</h2>
+    <p>
+      {{noteCopy}}
+    </p>
+  </div>
 </section>
 
 <section class="notes">
