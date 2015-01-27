@@ -62,3 +62,23 @@ nav {
 button {
   color: rgba(159,21,55, 1)
 }
+
+.flash-message {
+  text-align: center;
+}
+
+.flash_messages-success {
+  background: green;
+}
+
+.flash_messages-fail {
+  background: red;
+}
+
+.flash_messages-type {
+  visibility: hidden;
+}
+
+.flash_messages-content {
+  padding-bottom: 20px;
+}
