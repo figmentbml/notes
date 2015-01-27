@@ -35,6 +35,6 @@
     "glob": "^4.0.5"
   },
   "resolutions": {
-    "handlebars": "handlebars#2.0.0"
+    "handlebars": "handlebars#~2.0.0"
   }
 }
