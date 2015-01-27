@@ -1,6 +1,7 @@
 import Ember from "ember";
 
 export default Ember.ArrayController.extend({
+
   actions: {
     newNote: function() {
       var body = this.get('noteCopy');
@@ -17,10 +18,13 @@ export default Ember.ArrayController.extend({
     },
 
     deleteNote: function(id) {
-      var note = this.store.find('note', id).then(function(note) {
+      this.store.find('note', id).then(function(note) {
         note.deleteRecord();
-        note.save();
-      });
+        note.save().then(function(){
+          this.flashMessage('success', 'Your note has been deleted!', 10000);
+        }.bind(this));
+      }.bind(this));
     }
+
   }
 });
