@@ -22,7 +22,17 @@ module.exports = function(environment) {
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
       'media-src': "'self'"
     },
-    
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self' localhost:3000",
+      'img-src': "'self'",
+      'style-src': "'self'",
+      'media-src': "'self'"
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
