@@ -19,14 +19,24 @@ export default Ember.ArrayController.extend({
       }
     },
 
-    deleteNote: function(id) {
-      this.store.find('note', id).then(function(note) {
+    deleteNote: function(note) {
         note.deleteRecord();
-        note.save().then(function(){
-          this.flashMessage('success', 'Your note has been deleted!');
-        }.bind(this));
-      }.bind(this));
-    }
+        note.save();
+        this.flashMessage('success', 'Your note has been deleted!');
+    },
 
-  }
+    updateNote: function(id, content) {
+      this.store.find('note', id).then(function(note) {
+        note.updateRecord(content);
+        note.save();
+      });
+    },
+
+    editNote: function() {
+      this.get('model').set('isEditing', true);
+      console.log('hit editNote');
+    },
+  },
+  isEditing: false,
+
 });

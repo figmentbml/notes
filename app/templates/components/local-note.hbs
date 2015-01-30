@@ -1,0 +1,16 @@
+<div {{bind-attr class="note.isEditing:editing"}}>
+  {{#if note.isEditing}}
+    <input class="edit">
+    {{title}}
+    {{body}}
+    <button {{action 'updateNote' id body}}>Update</button>
+    {{else}}
+    <h2>
+      <label {{action 'editNote' on="click" id=id }}>{{title}}</label>
+    </h2>
+    <p>
+      {{body}}
+    </p>
+    <button {{action 'deleteNote' note}}>Delete</button>
+  {{/if}}
+</div>
