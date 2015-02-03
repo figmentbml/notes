@@ -1,12 +1,11 @@
-<div {{bind-attr class="note.isEditing:editing"}}>
+<div {{bind-attr class="note.isEditing"}}>
   {{#if note.isEditing}}
-    <input class="edit">
-    {{title}}
-    {{body}}
-    <button {{action 'updateNote' id body}}>Update</button>
-    {{else}}
+    {{textarea value=title}}
+    {{textarea value=body}}
+    <button {{action 'saveNote' this}}>Save</button>
+  {{else}}
     <h2>
-      <label {{action 'editNote' on="click" id=id }}>{{title}}</label>
+      <label {{action 'editNote' this on="click"}}>{{title}}</label>
     </h2>
     <p>
       {{body}}

@@ -25,11 +25,10 @@ export default Ember.ArrayController.extend({
         this.flashMessage('success', 'Your note has been deleted!');
     },
 
-    updateNote: function(id, content) {
-      this.store.find('note', id).then(function(note) {
-        note.updateRecord(content);
-        note.save();
-      });
+    saveNote: function(note) {
+      var title = this.get('title');
+      note.set('title', title)
+      note.save();
     },
 
     editNote: function() {
